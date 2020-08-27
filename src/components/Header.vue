@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center h-64 py-64 text-orange-400 bg-gradient-to-r from-gray-800 to-gray-900 shadow-2xl"
+    class="flex flex-col items-center justify-center h-64 py-64 text-orange-400 bg-gradient-to-r from-black to-gray-900 shadow-2xl"
   >
     <div class="flex flex-row">
       <svg

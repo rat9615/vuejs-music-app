@@ -13,89 +13,35 @@
           v-for="(item, index) in someList"
           :key="index"
           :style="item.style"
-          class="cursor-pointer rounded-lg"
+          class="cursor-pointer rounded-lg hover:shadow-lg transition duration-200 transform hover:-translate-y-2"
+          v-on:click="handleClick"
           >{{ item.html }}</slideritem
         >
       </slider>
     </div>
+    <MusicPlayer v-if="visible" />
   </div>
 </template>
 
 <script>
 import { slider, slideritem } from 'vue-concise-slider';
+import MusicPlayer from './MusicPlayer.vue';
 
 export default {
   name: 'Carousel',
   data() {
     return {
-      someList: [
-        {
-          html: 'Hey - Afrojack',
-          style: {
-            background:
-              "url('https://source.unsplash.com/user/@marcelalaskoski/YrtFlrLo2DQ')",
-            backgroundSize: 'cover',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
+      visible: false,
+      someList: new Array(8).fill({
+        html: 'Hey - Afrojack',
+        style: {
+          background:
+            "url('https://source.unsplash.com/user/@marcelalaskoski/YrtFlrLo2DQ')",
+          backgroundSize: 'cover',
+          width: '23.5%',
+          marginRight: '0.5%',
         },
-        {
-          html: 'slider2',
-          style: {
-            background: '#4bbfc3',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider3',
-          style: {
-            background: '#7baabe',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider4',
-          style: {
-            background: '#7caabe',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider5',
-          style: {
-            background: '#4abf8a',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider6',
-          style: {
-            background: '#4bbfc3',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider7',
-          style: {
-            background: '#7baabe',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-        {
-          html: 'slider8',
-          style: {
-            background: '#7caabe',
-            width: '23.5%',
-            marginRight: '0.5%',
-          },
-        },
-      ],
+      }),
       options: {
         currentPage: 0,
         tracking: false,
@@ -110,6 +56,10 @@ export default {
   components: {
     slider,
     slideritem,
+    MusicPlayer,
+  },
+  methods: {
+    onTap: () => (this.visible = true),
   },
 };
 </script>
