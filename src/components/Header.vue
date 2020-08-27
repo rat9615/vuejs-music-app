@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   components: {},
 };
 </script>

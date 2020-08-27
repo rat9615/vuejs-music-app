@@ -6,11 +6,12 @@
 </template>
 
 <script>
-import Header from "./components/Header.vue";
-import Carousel from "./components/Carousel.vue";
+import Header from './components/Header.vue';
+import Carousel from './components/Carousel.vue';
 
 export default {
-  name: "App",
+  visible: true,
+  name: 'App',
   components: {
     Header,
     Carousel,
