@@ -19,6 +19,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "tailwindcss": "^1.7.5",
+    "vue-concise-slider": "^3.4.4",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
