@@ -1,24 +1,15 @@
 # vuejs-music-app
+A simple **Music Web Application**  written using [Vue.js](https://vuejs.org/).
+
+## Built With
+- [Vue.js](https://vuejs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 
 ## Project setup
+To setup the project
 ```
 yarn install
+yarn serve 
 ```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Note
+The project is optimized to work on big screens and is not responsive on mobile devices.
