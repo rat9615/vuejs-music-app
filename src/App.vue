@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Carousel from './components/Carousel.vue';
+import Header from '@/components/Header.vue';
+import Carousel from '@/components/Carousel.vue';
 
 export default {
   visible: true,

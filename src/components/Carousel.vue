@@ -1,14 +1,17 @@
 <template>
-  <div class="flex flex-col pl-16 pt-16 text-gray-300 font-extrabold">
-    <MusicPlayer v-if="showModal" />
-    <h1 class="text-3xl mb-6">My Playlist</h1>
-    <div class="w-full h-64 font-semibold">
-      <slider ref="slider" :options="options" @tap="showModal = true">
+  <div class="flex flex-col flex-grow h-screen lg:pl-5 lg:py-5 xl:pl-16 xl:pt-16 text-gray-300 font-extrabold max-h-screen">
+    <MusicPlayer v-model="showModal" />
+    <button class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1" type="button" style="transition: all .15s ease" v-on:click="toggleModal">
+      Open large modal
+    </button>
+    <h1 class="text-3xl lg:mb-4 xl:mb-6">My Playlist</h1>
+    <div class="w-full lg:h-48 xl:h-64 font-semibold">
+      <slider ref="slider" :options="options" @tap="showModal = !showModal">
         <slideritem
           v-for="(item, index) in someList"
           :key="index"
           :style="item.style"
-          class="cursor-pointer rounded-lg hover:shadow-lg transition duration-200 transform hover:-translate-y-2"
+          class="cursor-pointer rounded-lg hover:shadow-lg transition duration-200 transform hover:-translate-y-2 lg:text-xl h-auto select-none"
           >{{ item.html }}</slideritem
         >
       </slider>
@@ -51,5 +54,10 @@ export default {
     slideritem,
     MusicPlayer,
   },
+  methods:{
+    toggleModal() {
+      this.showModal = !this.showModal;
+    }
+  }
 };
 </script>
